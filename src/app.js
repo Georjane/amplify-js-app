@@ -35,11 +35,15 @@ const SubscriptionResult = document.getElementById("SubscriptionResult");
    });
  });
 
+
+
  API.graphql(graphqlOperation(onCreateTodo)).subscribe({
   next: (evt) => {
     const todo = evt.value.data.onCreateTodo;
     SubscriptionResult.innerHTML += `<p>${todo.name} - ${todo.description}</p>`;
   },
 });
+
+
 
 getData();
